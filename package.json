@@ -14,7 +14,9 @@
     "package:css": "NO_EXTRACT_CSS=true npm run package -- --dest dist-css",
     "prettier": "prettier --write lib/**/*.{ts,tsx,scss}",
     "sass": "sass lib/theme:theme",
-    "typings": "tsc -p tsconfig.package.json && cp -a lib/typings typings"
+    "typings": "tsc -p tsconfig.package.json && cp -a lib/typings typings",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "main": "./dist/vue-slider-component.umd.min.js",
   "files": [
@@ -30,7 +32,12 @@
     "vue-property-decorator": "^8.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.5",
     "@commitlint/config-conventional": "^7.3.1",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/vue": "^6.5.9",
     "@types/chai": "^4.1.0",
     "@types/mocha": "^5.2.4",
     "@vue/cli-plugin-babel": "~4.5.8",
@@ -38,6 +45,7 @@
     "@vue/cli-plugin-unit-mocha": "~4.5.8",
     "@vue/cli-service": "~4.5.8",
     "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-loader": "^8.2.5",
     "chai": "^4.1.2",
     "codemirror": "^5.44.0",
     "commitlint": "^7.3.2",
@@ -50,6 +58,7 @@
     "typescript": "~3.9.3",
     "uslug": "^1.0.4",
     "vue": "^2.6.6",
+    "vue-loader": "^15.9.8",
     "vue-markdown-loader": "^2.4.1",
     "vue-property-decorator": "^8.0.0",
     "vue-router": "^3.0.2",
