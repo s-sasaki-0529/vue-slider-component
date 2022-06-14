@@ -25,8 +25,6 @@ switch (theme) {
     require('../lib/theme/default.scss')
 }
 
-Vue.use(Vuep)
-Vue.component('Example', Example)
 Vue.component('VueSlider', VueSlider)
 
 Vue.config.productionTip = false

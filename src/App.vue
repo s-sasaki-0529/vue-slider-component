@@ -1,143 +1,182 @@
 <template>
   <div id="app">
-    <navbar />
-    <section ref="content" class="content">
-      <div class="markdown-body">
-        <router-view />
-        <page-footer />
+    <div class="group">
+      <h3>{{ value1 }}</h3>
+      <div class="sample-list">
+        <div class="sample">
+          <p>default</p>
+          <VueSlider
+            :value="value1"
+            @change="
+              v => {
+                value1 = v
+              }
+            "
+          />
+        </div>
+
+        <div class="sample">
+          <p>tooltip=none</p>
+          <VueSlider v-model="value1" tooltip="none" />
+        </div>
+
+        <div class="sample">
+          <p>tooltip=always</p>
+          <VueSlider v-model="value1" tooltip="always" />
+        </div>
+
+        <div class="sample">
+          <p>contained=true</p>
+          <VueSlider v-model="value1" contained />
+        </div>
+
+        <div class="sample">
+          <p>dotSize=30</p>
+          <VueSlider v-model="value1" dotSize="30" />
+        </div>
+
+        <div class="sample">
+          <p>width=50%</p>
+          <VueSlider v-model="value1" width="50%" />
+        </div>
+
+        <div class="sample">
+          <p>height=20px</p>
+          <VueSlider v-model="value1" height="20px" />
+        </div>
+
+        <div class="sample">
+          <p>direction=rtl</p>
+          <VueSlider v-model="value1" direction="rtl" />
+        </div>
+
+        <div class="sample">
+          <p>duration=0</p>
+          <VueSlider v-model="value1" :duration="0" />
+        </div>
+
+        <div class="sample">
+          <p>lazy</p>
+          <VueSlider v-model="value1" lazy />
+        </div>
+
+        <div class="sample">
+          <p>direction=ttb</p>
+          <VueSlider v-model="value1" direction="ttb" height="200px" />
+        </div>
+
+        <div class="sample">
+          <p>direction=btt</p>
+          <VueSlider v-model="value1" direction="btt" height="200px" />
+        </div>
+
+        <div class="sample">
+          <p>disabled</p>
+          <VueSlider v-model="value1" disabled />
+        </div>
+
+        <div class="sample">
+          <p>dotStyle</p>
+          <VueSlider v-model="value1" :dot-style="{ 'background-color': '#000' }" />
+        </div>
+
+        <div class="sample">
+          <p>railStyle</p>
+          <VueSlider v-model="value1" :rail-style="{ 'background-color': '#fc851b' }" />
+        </div>
+
+        <div class="sample">
+          <p>processStyle</p>
+          <VueSlider v-model="value1" :process-style="{ 'background-color': '#fc851b' }" />
+        </div>
+
+        <div class="sample">
+          <p>style</p>
+          <VueSlider v-model="value1" :style="{ 'background-color': '#fc851b' }" />
+        </div>
+
+        <div class="sample">
+          <p>dot slot</p>
+          <VueSlider v-model="value1">
+            <template #dot>
+              <span class="dot">{{ value1 }}</span>
+            </template>
+          </VueSlider>
+        </div>
+
+        <div class="sample">
+          <p>event (console logs)</p>
+          <VueSlider
+            v-model="value1"
+            @drag-start="(v) => log('@dragStart', v)"
+            @drag-end="(v) => log('@dragEnd', v)"
+            @dragging="(v) => log('@dragging', v)"
+          />
+        </div>
       </div>
-    </section>
+    </div>
+
+    <div class="group">
+      <h3>{{ value2 }}</h3>
+      <div class="sample-list">
+        <div class="sample">
+          <p>min=0 max=10 interval=0.1</p>
+          <VueSlider v-model="value2" :min="0" :max="10" :interval="0.1" />
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>{{ value3 }}</h3>
+      <div class="sample-list">
+        <div class="sample">
+          <p>default</p>
+          <VueSlider v-model="value3" />
+        </div>
+
+        <div class="sample">
+          <p>enableCross=false</p>
+          <VueSlider v-model="value3" :enableCross="false" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator'
-import Navbar from './components/Navbar.vue'
-import PageFooter from './components/PageFooter.vue'
-
-import { setQuery, getQuery, getTheme } from './utils'
-
-@Component({
-  components: {
-    Navbar,
-    PageFooter
-  }
-})
-export default class App extends Vue {
-
-  @Watch('$route')
-  onRouteChanged() {
-    (this.$refs.content as HTMLDivElement).scrollTop = 0
-  }
-
-  created() {
-    const theme = getTheme()
-    if (document && document.documentElement) {
-      document.documentElement.classList.add(`theme-${theme}`)
+export default {
+  data() {
+    return {
+      value1: 50,
+      value2: 5.0,
+      value3: [20, 80],
     }
-  }
-
-  mounted() {
-    document.body.onclick = e => {
-      if (e.target && e.target instanceof HTMLAnchorElement && e.target.classList.contains('header-anchor')) {
-        e.preventDefault()
-        const hash = decodeURIComponent(e.target.href.split('#')[1])
-        const query = getQuery()
-        query.hash = hash
-        setQuery(query)
-      }
+  },
+  methods: {
+    log(msg, value) {
+      console.log({ msg, value })
     }
   }
 }
 </script>
 
-<style lang="scss">
-@import './styles/var';
-@import './styles/media';
-
-@import './styles/markdown';
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+<style scoped>
 #app {
+  width: 100vw;
+}
+#app .group {
+  border-bottom: 1px solid;
+  padding: 20px;
+}
+#app .group .sample-list {
+  width: 100%;
   display: flex;
-  font-size: 14px;
-  font-family: Avenir,-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol',sans-serif;
-  color: #2c3e50;
-  height: 100vh;
-  overflow: hidden;
-
-  .content {
-    flex: 1;
-    overflow: auto;
-  }
-
-  .header-anchor {
-    position: absolute;
-    left: -20px;
-    top: 0;
-    color: pink;
-    opacity: 0;
-    transition: opacity .5s;
-  }
-
-  .vue-slider:not(:first-child) {
-    margin-top: 45px;
-  }
-
-  .markdown-body {
-    font-family: inherit;
-    max-width: 1040px;
-    padding: 120px 60px 40px;
-    margin: 0 auto;
-    color: #34495e;
-    @include max-screen(992px) {
-      & {
-        padding: 30px 20px 20px;
-        width: 100%;
-      }
-    }
-
-    h2, h3 {
-      position: relative;
-      margin-top: 90px;
-      &:hover .header-anchor {
-        opacity: 1;
-      }
-
-      @include max-screen(992px) {
-        & {
-          margin-top: 50px;
-        }
-      }
-    }
-
-    ol {
-      margin-top: 30px;
-    }
-
-    code:not([class^="language-"]) {
-      color: $main;
-      padding: 3px 5px;
-      margin: 0 2px;
-      border-radius: 2px;
-      white-space: nowrap;
-    }
-
-    .CodeMirror pre {
-      line-height: 1.45;
-      font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
-    }
-
-    // https://github.com/codemirror/CodeMirror/issues/5269
-    .cm-tag.cm-error {
-      color: #ff5370;
-      background-color: transparent;
-    }
-  }
+  flex-wrap: wrap;
+  gap: 15px;
+}
+#app .group .sample-list .sample {
+  min-width: 300px;
+  justify-self: center;
+  align-self: center;
 }
 </style>
