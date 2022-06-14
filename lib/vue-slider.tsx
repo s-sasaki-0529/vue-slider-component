@@ -17,7 +17,7 @@ import {
   TooltipFormatter,
 } from './typings'
 import VueSliderDot from './vue-slider-dot.vue'
-import VueSliderMark from './vue-slider-mark'
+import VueSliderMark from './vue-slider-mark.vue'
 
 import { getSize, getPos, getKeyboardHandleFunc, HandleFunction } from './utils'
 import Decimal from './utils/decimal'

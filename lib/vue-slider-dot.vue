@@ -28,7 +28,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import './styles/dot.scss'
 export default {
   emits: ['drag-start'],
@@ -129,7 +129,7 @@ export default {
     },
   },
   methods: {
-    dragStart(e: MouseEvent | TouchEvent) {
+    dragStart(e /* MouseEvent | TouchEvent */) {
       if (this.disabled) {
         return false
       }
