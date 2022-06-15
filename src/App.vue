@@ -6,7 +6,7 @@
         <div class="sample">
           <p>default</p>
           <VueSlider
-            :value="value1"
+            :modelValue="value1"
             @change="
               v => {
                 value1 = v

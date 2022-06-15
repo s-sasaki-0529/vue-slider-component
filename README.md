@@ -31,7 +31,7 @@ WIP
 
 ```vue
 <template>
-  <VueSlider :value="value" @change="v => { value = v }" />
+  <VueSlider v-model="value" />
 </template>
 
 <script>

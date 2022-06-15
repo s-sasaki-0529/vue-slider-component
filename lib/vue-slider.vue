@@ -117,13 +117,13 @@ export const SliderState = {
 import './styles/style.scss'
 import './styles/slider.scss'
 export default {
-  emits: ['change', 'drag-start', 'drag-end', 'dragging', 'error'],
+  emits: ['update:modelValue', 'change', 'drag-start', 'drag-end', 'dragging', 'error'],
   components: {
     VueSliderDot,
     VueSliderMark,
   },
   props: {
-    value: {
+    modelValue: {
       type: [Number, String, Array],
       default: 0,
     },
@@ -499,10 +499,10 @@ export default {
     // Slider value and component internal value are inconsistent
     isNotSync() {
       const values = this.control.dotsValue
-      return Array.isArray(this.value)
-        ? this.value.length !== values.length ||
-            this.value.some((val, index) => val !== values[index])
-        : this.value !== values[0]
+      return Array.isArray(this.modelValue)
+        ? this.modelValue.length !== values.length ||
+            this.modelValue.some((val, index) => val !== values[index])
+        : this.modelValue !== values[0]
     },
     /**
      * Get the drag range of the slider
@@ -564,7 +564,7 @@ export default {
     },
     initControl() {
       this.control = new Control({
-        value: this.value,
+        value: this.modelValue,
         data: this.sliderData,
         enableCross: this.enableCross,
         fixed: this.fixed,
@@ -628,9 +628,10 @@ export default {
     },
     syncValueByPos() {
       const values = this.control.dotsValue
-      if (this.isDiff(values, Array.isArray(this.value) ? this.value : [this.value])) {
+      if (this.isDiff(values, Array.isArray(this.modelValue) ? this.modelValue : [this.modelValue])) {
         const eventValue = values.length === 1 ? values[0] : [...values]
         this.$emit('change', eventValue, this.focusDotIndex)
+        this.$emit('update:modelValue', eventValue, this.focusDotIndex)
       }
     },
     isDiff(value1, value2) {
@@ -709,7 +710,7 @@ export default {
           this.syncValueByPos()
         }
         if (this.included && this.isNotSync) {
-          this.control.setValue(this.value)
+          this.control.setValue(this.modelValue)
         } else {
           // Sync slider position
           this.control.syncDotsPos()
@@ -783,7 +784,7 @@ export default {
 
       setTimeout(() => {
         if (this.included && this.isNotSync) {
-          this.control.setValue(this.value)
+          this.control.setValue(this.modelValue)
         } else {
           this.control.syncDotsPos()
         }
@@ -836,9 +837,9 @@ export default {
     },
   },
   watch: {
-    value() {
+    modelValue() {
       if (this.control && !this.states.has(SliderState.Drag) && this.isNotSync) {
-        this.control.setValue(this.value)
+        this.control.setValue(this.modelValue)
         this.syncValueByPos()
       }
     },
