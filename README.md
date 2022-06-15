@@ -10,9 +10,12 @@ This repository is forked from [NightCatSame/vue-slider-component](https://githu
 
 Please note that specifications may differ from the original.
 
-#### install
+## 🎯 install
 
-WIP
+```bash
+$ yarn add vue-slider-component
+# npm install vue-slider-component --save
+```
 
 ## ✨ Features
 
