@@ -20,7 +20,6 @@ $ yarn add vue-slider-component
 ## ✨ Features
 
 - 🍖 More customizable
-- 👗 Multiple style themes
 - 🐳 Support for more sliders
 - 📌 Add marks
 
@@ -37,7 +36,6 @@ WIP
 
 <script>
 import VueSlider from 'vue-3-slider-component'
-import 'vue-3-slider-component/theme/antd.css'
 
 export default {
   components: {

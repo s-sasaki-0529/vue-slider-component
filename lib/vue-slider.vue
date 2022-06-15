@@ -98,7 +98,6 @@
 </template>
 
 <script>
-import './styles/slider.scss'
 import VueSliderDot from './vue-slider-dot.vue'
 import VueSliderMark from './vue-slider-mark.vue'
 import { getSize, getPos, getKeyboardHandleFunc, HandleFunction } from './utils'
@@ -115,6 +114,8 @@ export const SliderState = {
   Focus: 1 << 2,
 }
 
+import './styles/style.scss'
+import './styles/slider.scss'
 export default {
   emits: ['change', 'drag-start', 'drag-end', 'dragging', 'error'],
   components: {
