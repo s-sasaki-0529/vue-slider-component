@@ -26,13 +26,18 @@
         </div>
 
         <div class="sample">
+          <p>tooltipFormatter={value}%</p>
+          <VueSlider v-model="value1" :tooltip-formatter="'{value}%'" />
+        </div>
+
+        <div class="sample">
           <p>contained=true</p>
           <VueSlider v-model="value1" contained />
         </div>
 
         <div class="sample">
           <p>dotSize=30</p>
-          <VueSlider v-model="value1" dotSize="30" />
+          <VueSlider v-model="value1" :dotSize="30" />
         </div>
 
         <div class="sample">
@@ -91,6 +96,11 @@
         </div>
 
         <div class="sample">
+          <p>tooltipStyle</p>
+          <VueSlider v-model="value1" tooltip="always" :tooltip-style="{ 'background-color': '#fc851b' }" />
+        </div>
+
+        <div class="sample">
           <p>style</p>
           <VueSlider v-model="value1" :style="{ 'background-color': '#fc851b' }" />
         </div>
@@ -100,6 +110,24 @@
           <VueSlider v-model="value1">
             <template #dot>
               <span class="dot">{{ value1 }}</span>
+            </template>
+          </VueSlider>
+        </div>
+
+        <div class="sample">
+          <p>tooltip slot</p>
+          <VueSlider v-model="value1" tooltip="always">
+            <template #tooltip>
+              <span class="tooltip">{{ value1 }}</span>
+            </template>
+          </VueSlider>
+        </div>
+
+        <div class="sample">
+          <p>default slot</p>
+          <VueSlider v-model="value1" tooltip="always">
+            <template>
+              <span class="tooltip">{{ value1 }}</span>
             </template>
           </VueSlider>
         </div>
@@ -140,6 +168,32 @@
         </div>
       </div>
     </div>
+
+    <div class="group">
+      <h3>{{ value4 }}</h3>
+      <div class="sample-list">
+        <div class="sample">
+          <p>marks=true</p>
+          <VueSlider v-model="value4" :min="0" :max="10" :marks="true" />
+        </div>
+
+        <div class="sample">
+          <p>adsorb=true</p>
+          <VueSlider v-model="value4" :min="0" :max="10" :adsorb="true" />
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>{{ value5 }}</h3>
+      <div class="sample-list">
+        <div class="sample">
+          <p>data="['A', 'B', 'C', 'D']"</p>
+          <VueSlider v-model="value5" :data="['A', 'B', 'C', 'D']" :marks="true" />
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -150,6 +204,8 @@ export default {
       value1: 50,
       value2: 5.0,
       value3: [20, 80],
+      value4: 5,
+      value5: 'C'
     }
   },
   methods: {
