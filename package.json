@@ -15,7 +15,7 @@
     "prettier": "prettier --write lib/**/*.{ts,tsx,scss}",
     "typings": "tsc -p tsconfig.package.json && cp -a lib/typings typings"
   },
-  "main": "./dist/vue-slider-component.umd.min.js",
+  "main": "./dist/vue-3-slider-component.umd.min.js",
   "files": [
     "dist",
     "lib",
