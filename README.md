@@ -13,8 +13,8 @@ Please note that specifications may differ from the original.
 ## 🎯 install
 
 ```bash
-$ yarn add vue-slider-component
-# npm install vue-slider-component --save
+$ yarn add vue-3-slider-component
+# npm install vue-3-slider-component --save
 ```
 
 ## ✨ Features
