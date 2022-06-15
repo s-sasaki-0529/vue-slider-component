@@ -4,7 +4,7 @@
   "description": "A highly customized slider component",
   "author": "NightCatSama <642163903@qq.com>",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve src/main.js",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
@@ -29,14 +29,14 @@
     "core-js": "^3.6.5"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.8",
-    "@vue/cli-plugin-typescript": "~4.5.8",
-    "@vue/cli-service": "~4.5.8",
+    "@vue/cli-plugin-babel": "~5.0.4",
+    "@vue/cli-plugin-typescript": "~5.0.4",
+    "@vue/cli-service": "~5.0.4",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.2",
     "sass": "1.26.7",
     "sass-loader": "^8.0.2",
-    "typescript": "~3.9.3",
+    "typescript": "~4.5.5",
     "vue": "^2.6.6",
     "vue-template-compiler": "^2.6.14"
   },
