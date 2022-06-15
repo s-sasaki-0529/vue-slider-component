@@ -1,9 +1,6 @@
 <template>
   <div :class="marksClasses">
-    <template v-if="$slots.step">
-      <slot name="step" />
-    </template>
-    <template v-else>
+    <slot name="step">
       <div
         :class="stepClasses"
         :style="[
@@ -13,13 +10,10 @@
           mark.active ? mark.activeStyle : null,
         ]"
       />
-    </template>
+    </slot>
 
     <template v-if="!hideLabel">
-      <template v-if="$slots.label">
-        <slot name="label" />
-      </template>
-      <template v-else>
+      <slot name="label">
         <div
           :class="labelClasses"
           :style="[
@@ -32,7 +26,7 @@
         >
           {{ mark.label }}
         </div>
-      </template>
+      </slot>
     </template>
   </div>
 </template>
