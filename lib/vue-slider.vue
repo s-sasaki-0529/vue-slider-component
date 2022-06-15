@@ -630,7 +630,6 @@ export default {
       if (this.isDiff(values, Array.isArray(this.value) ? this.value : [this.value])) {
         const eventValue = values.length === 1 ? values[0] : [...values]
         this.$emit('change', eventValue, this.focusDotIndex)
-        this.$emit('input', eventValue, this.focusDotIndex)
       }
     },
     isDiff(value1, value2) {
