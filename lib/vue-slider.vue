@@ -210,7 +210,7 @@ export default {
     },
     tooltipFormatter: {
       type: [String, Array, Function],
-      default: undefined,
+      default: '',
     },
     useKeyboard: {
       type: Boolean,

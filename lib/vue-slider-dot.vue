@@ -28,7 +28,7 @@ export default {
   emits: ['drag-start'],
   props: {
     value: {
-      type: Number, // number | string
+      type: [Number, String], // number | string
       default: 0,
     },
     tooltip: {
@@ -48,7 +48,7 @@ export default {
       required: true,
     },
     tooltipFormatter: {
-      type: Object, // string | (val: Value) => string
+      type: [String, Array, Object], // string | (val: Value) => string
       default: undefined,
     },
     focus: {

@@ -17,9 +17,9 @@
         <div
           :class="labelClasses"
           :style="[
-            this.labelStyle,
+            labelStyle,
             mark.labelStyle,
-            mark.active ? this.labelActiveStyle : null,
+            mark.active ? labelActiveStyle : null,
             mark.active ? mark.labelActiveStyle : null,
           ]"
           @click="labelClickHandle"
