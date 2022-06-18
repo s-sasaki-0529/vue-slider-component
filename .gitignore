@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
-docs/
+docs/.vuepress/.temp/
+docs/.vuepress/.cache/
 dist/
 dist-css/
 es/
