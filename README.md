@@ -19,7 +19,7 @@ $ yarn add vue-3-slider-component
 
 ## ✨ Features
 
-- 🍖 More customizable
+- 🛠️ More customizable
 - 🐳 Support for more sliders
 - 📌 Add marks
 
