@@ -82,7 +82,7 @@
           tabindex="0"
           :nativeOnFocus="() => !dot.disabled && focus(index)"
           :nativeOnBlur="() => blur()"
-          v-bind="{ attrs: dotAttrs }"
+          v-bind="{ ...dotAttrs }"
         >
           <template #dot>
             <slot name="dot" v-bind="{ dot }" />
