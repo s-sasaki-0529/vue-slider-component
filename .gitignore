@@ -4,6 +4,7 @@ dist/
 dist-css/
 es/
 /typings/
+storybook-static/
 
 # local env files
 .env.local
