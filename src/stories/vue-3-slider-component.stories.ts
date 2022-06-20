@@ -11,6 +11,8 @@ export default {
         component: `
 > 🎚 A highly customized slider component
 
+[GitHub](https://github.com/s-sasaki-0529/vue-slider-component)
+
 ## Forked from [NightCatSame/vue-slider-component](https://github.com/NightCatSama/vue-slider-component)
 
 This package is forked from [NightCatSame/vue-slider-component](https://github.com/NightCatSama/vue-slider-component) (v3.2.10) and rewritten to work with Vue 3.
