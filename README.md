@@ -27,6 +27,11 @@ $ yarn add vue-3-slider-component
 
 [Storybook](https://vue-3-slider-component.netlify.app/?path=/docs/vue-3-slider-component--vue-3-slider-component)
 
+TODO
+
+- [ ] add `slots` stories
+- [ ] add `methods` stories
+
 ## 🚀 Usage
 
 ```vue
