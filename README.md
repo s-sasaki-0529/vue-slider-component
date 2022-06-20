@@ -25,7 +25,7 @@ $ yarn add vue-3-slider-component
 
 ## 📚 Documentation
 
-WIP
+[Storybook](https://vue-3-slider-component.netlify.app/?path=/docs/vue-3-slider-component--vue-3-slider-component)
 
 ## 🚀 Usage
 
