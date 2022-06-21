@@ -7,7 +7,15 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: `Whether the slider automatically adsorb to the nearest value.`,
+        component: `
+- **Type**：\`boolean\`
+
+- **Default**：\`false\`
+
+- **Usage**：
+
+  Whether the slider automatically adsorb to the nearest value.
+        `,
       },
     },
   },
