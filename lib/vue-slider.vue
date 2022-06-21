@@ -34,8 +34,8 @@
                 :labelActiveStyle="labelActiveStyle"
                 :onPressLabel="pos => clickable && setValueByPos(pos)"
               >
-                <slot name="step" v-bind="{ mark }" />
-                <slot name="label" v-bind="{ mark }" />
+                <slot name="step" v-bind="{ ...mark }" />
+                <slot name="label" v-bind="{ ...mark }" />
               </vue-slider-mark>
             </slot>
           </template>
@@ -85,10 +85,10 @@
           v-bind="{ ...dotAttrs }"
         >
           <template #dot>
-            <slot name="dot" v-bind="{ dot }" />
+            <slot name="dot" v-bind="{ ...dot }" />
           </template>
           <template #tooltip>
-            <slot name="tooltip" v-bind="{ tooltip }" />
+            <slot name="tooltip" v-bind="{ ...tooltip }" />
           </template>
         </vue-slider-dot>
         <slot v-bind="{ value: getValue() }" />
