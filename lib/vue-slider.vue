@@ -88,7 +88,7 @@
             <slot name="dot" v-bind="{ ...dot }" />
           </template>
           <template #tooltip>
-            <slot name="tooltip" v-bind="{ ...tooltip }" />
+            <slot name="tooltip" v-bind="{ ...dot }" />
           </template>
         </vue-slider-dot>
         <slot v-bind="{ value: getValue() }" />
