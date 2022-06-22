@@ -17,7 +17,7 @@ export default {
   Set custom attributes on the slider.
 
   \`\`\`html
-    <vue-slider :dot-attrs="{ 'aria-label': 'Select your age' }" />
+    <VueSlider :dot-attrs="{ 'aria-label': 'Select your age' }" />
     \`\`\`
   `,
       },

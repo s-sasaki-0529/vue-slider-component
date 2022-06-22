@@ -30,11 +30,11 @@ export const step: Story = args => ({
     return { value }
   },
   template: `
-    <vue-slider v-model="value" :marks="true" :interval="10" contained>
+    <VueSlider v-model="value" :marks="true" :interval="10" contained>
       <template #step="{ active, value }">
         <div style="width: 1px; height: 10px; border-left: 1px solid; margin-top: -5px"></div>
       </template>
-    </vue-slider>
+    </VueSlider>
   `,
 })
 step.storyName = 'step'

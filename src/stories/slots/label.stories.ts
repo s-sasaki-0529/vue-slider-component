@@ -30,11 +30,11 @@ export const label: Story = args => ({
     return { value }
   },
   template: `
-    <vue-slider v-model="value" :marks="true" :interval="10">
+    <VueSlider v-model="value" :marks="true" :interval="10">
       <template #label="{ active, value }">
         <div v-show="!active">{{ value }}</div>
       </template>
-    </vue-slider>
+    </VueSlider>
   `,
 })
 label.storyName = 'label'

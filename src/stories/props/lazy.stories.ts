@@ -21,7 +21,7 @@ export default {
   If you set \`lazy\` and still need to listen for changes in the value, you can listen to the event \`dragging\`.
 
   \`\`\`html
-  <vue-slider
+  <VueSlider
     v-model="value"
     :lazy="true"
     @dragging="val => // do something"

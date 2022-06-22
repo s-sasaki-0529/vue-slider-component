@@ -17,13 +17,13 @@ export default {
 Custom data.
 
 \`\`\`html
-<vue-slider :data="['A', 'B', 'C', 'D']" v-model="value" />
+<VueSlider :data="['A', 'B', 'C', 'D']" v-model="value" />
 \`\`\`
 
 The object type is actually a simplified writing of \`data & marks & tooltipFormatter\`.
 
 \`\`\`html
-<vue-slider :data="[{ value: 1, label: 'A'}]" v-model="value" />
+<VueSlider :data="[{ value: 1, label: 'A'}]" v-model="value" />
 \`\`\`
   `,
       },

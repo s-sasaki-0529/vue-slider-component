@@ -19,7 +19,7 @@
         <div class="vue-slider-marks">
           <template v-for="(mark, index) in control.markList">
             <slot name="mark" v-bind="{ ...mark }">
-              <vue-slider-mark
+              <VueSliderMark
                 :key="`mark-${index}`"
                 :mark="mark"
                 :hideLabel="hideLabel"
@@ -40,14 +40,14 @@
                 <template #label>
                   <slot name="label" v-bind="{ ...mark }" />
                 </template>
-              </vue-slider-mark>
+              </VueSliderMark>
             </slot>
           </template>
         </div>
       </template>
 
       <template v-for="(dot, index) in dots">
-        <vue-slider-dot
+        <VueSliderDot
           :ref="`dot-${index}`"
           :value="dot.value"
           :disabled="dot.disabled"
@@ -94,7 +94,7 @@
           <template #tooltip>
             <slot name="tooltip" v-bind="{ ...dot }" />
           </template>
-        </vue-slider-dot>
+        </VueSliderDot>
         <slot name="default" v-bind="{ value: getValue() }" />
       </template>
     </div>

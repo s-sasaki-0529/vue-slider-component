@@ -30,12 +30,12 @@ export const process: Story = args => ({
     return { value }
   },
   template: `
-    <vue-slider v-model="value" :marks="true" :interval="10">
+    <VueSlider v-model="value" :marks="true" :interval="10">
       <template #process="{ start, end }">
         <div :style="'position: absolute; width: ' + end + '%; height: 1px; border: 1px solid'" >
         </div>
       </template>
-    </vue-slider>
+    </VueSlider>
   `,
 })
 process.storyName = 'process'

@@ -22,10 +22,10 @@ Format the value of the Tooltip. When the type is \`string\`, \`{value}\` will b
 
 \`\`\`html
   <!-- 0% -->
-  <vue-slider v-model="value" :tooltip-formatter="'{value}%'"/>
+  <VueSlider v-model="value" :tooltip-formatter="'{value}%'"/>
 
   <!-- A/B/C/D -->
-  <vue-slider
+  <VueSlider
     v-model="value"
     :data="['a', 'b', 'c', 'd']"
     :tooltip-formatter="val => val.toUpperCase()"

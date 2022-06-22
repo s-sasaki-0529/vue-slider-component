@@ -18,7 +18,7 @@ If the slider is using CSS3 scale transform to scale or is in a scaled container
 
 \`\`\`html
   <div style="transform: scale(1.1)">
-    <vue-slider :zoom="1.1" />
+    <VueSlider :zoom="1.1" />
   </div>
 \`\`\`
         `,

@@ -31,12 +31,12 @@ export const mark: Story = args => ({
     return { value }
   },
   template: `
-  <vue-slider v-model="value" :marks="true" :interval="10">
+  <VueSlider v-model="value" :marks="true" :interval="10">
     <template v-slot:mark="{ value, label }">
       <div v-show="value === 0" style="position: absolute; left: 0">{{ value }}</div>
       <div v-show="value === 100" style="position: absolute; right: 0">{{ value }}</div>
     </template>
-  </vue-slider>
+  </VueSlider>
   `,
 })
 mark.storyName = 'mark'
