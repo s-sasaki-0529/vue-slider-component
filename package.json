@@ -1,6 +1,6 @@
 {
   "name": "vue-3-slider-component",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A highly customized slider component for Vue 3",
   "author": "shingo.sasaki <shingo.sasaki.0529@gmail.com> (https://www.shingo-sasaki.net/)",
   "scripts": {
