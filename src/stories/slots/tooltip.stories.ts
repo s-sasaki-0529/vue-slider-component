@@ -19,16 +19,6 @@ export default {
   - \`{boolean} focus\` Whether the slider is in focus
 
   - \`{boolean} disabled\` Whether the slider is disabled
-
-- **Usage**:
-
-  \`\`\`html
-  <vue-slider v-model="value">
-    <template #tooltip="{ value }">
-      <div class="custom-tooltip">{{ value }}</div>
-    </template>
-  </vue-slider>
-  \`\`\`
         `,
       },
     },

@@ -19,16 +19,6 @@ export default {
   - \`{boolean} focus\` Whether the slider is in focus
 
   - \`{boolean} disabled\` Whether the slider is disabled
-
-- **Usage**:
-
-  \`\`\`html
-  <vue-slider v-model="value">
-    <template #dot>
-      <img :src="imgUrl" class="custom-dot"/>
-    </template>
-  </vue-slider>
-  \`\`\`
         `,
       },
     },
