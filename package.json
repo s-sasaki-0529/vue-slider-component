@@ -51,7 +51,7 @@
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
-  "homepage": "https://github.com/s-sasaki-0529/vue-slider-component",
+  "homepage": "https://vue-3-slider-component.netlify.app/?path=/docs/vue-3-slider-component--vue-3-slider-component",
   "keywords": [
     "vue",
     "slider",
