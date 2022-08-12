@@ -528,7 +528,7 @@ export default {
   mounted() {
     this.bindEvent()
   },
-  beforeDestroy() {
+  beforeUnmount() {
     this.unbindEvent()
   },
   methods: {
