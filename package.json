@@ -33,6 +33,7 @@
     "@storybook/builder-webpack5": "^6.5.9",
     "@storybook/manager-webpack5": "^6.5.9",
     "@storybook/vue3": "^6.5.9",
+    "@vue/cli": "^5.0.8",
     "@vue/cli-plugin-babel": "~5.0.4",
     "@vue/cli-plugin-typescript": "~5.0.4",
     "@vue/cli-service": "~5.0.4",
