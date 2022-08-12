@@ -14,7 +14,7 @@ export const sandbox: Story = args => ({
     return { value, sandbox, args }
   },
   template: `
-    <VueSlider v-model="value" v-bind="args">
+    <VueSlider v-model="value" v-bind="args" />
   `,
 })
 sandbox.storyName = 'sandbox'
