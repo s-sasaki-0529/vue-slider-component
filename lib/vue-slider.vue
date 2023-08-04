@@ -82,7 +82,7 @@
           aria-valuenow="dot.value"
           aria-valuemin="this.min"
           aria-valuemax="this.max"
-          aria-orientation="this.isHorizontal ? 'horizontal' : 'vertical'"
+          :aria-orientation="this.isHorizontal ? 'horizontal' : 'vertical'"
           tabindex="0"
           :nativeOnFocus="() => !dot.disabled && focus(index)"
           :nativeOnBlur="() => blur()"
