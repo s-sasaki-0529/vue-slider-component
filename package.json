@@ -6,13 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve src/main.js",
     "build": "vue-cli-service build --target lib lib/index.js",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint",
-    "build:library": "npm run test:unit && npm run package && npm run package:css && npm run typings && npm run sass",
-    "package": "vue-cli-service build --mode package --target lib --name vue-slider-component lib/index.ts",
-    "package:css": "NO_EXTRACT_CSS=true npm run package -- --dest dist-css",
     "prettier": "prettier --write lib/**/*.{ts,tsx,scss}",
-    "typings": "tsc -p tsconfig.package.json && cp -a lib/typings typings",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
