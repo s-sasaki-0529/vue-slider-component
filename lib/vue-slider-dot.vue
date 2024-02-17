@@ -48,7 +48,7 @@ export default {
       required: true,
     },
     tooltipFormatter: {
-      type: [String, Array, Object], // string | (val: Value) => string
+      type: [String, Array, Object, Function],
       default: undefined,
     },
     focus: {

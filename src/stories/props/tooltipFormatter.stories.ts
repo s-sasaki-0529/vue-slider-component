@@ -40,11 +40,20 @@ Format the value of the Tooltip. When the type is \`string\`, \`{value}\` will b
 export const tooltipFormatter: Story = args => ({
   components: { VueSlider },
   setup() {
-    const value = ref(50)
-    return { value, args }
+    const value1 = ref(50)
+    const value2 = ref('a')
+    return { value1, value2, args }
   },
   template: `
-    <VueSlider v-model="value" tooltip="always" :tooltipFormatter="args.tooltipFormatter" />
+    <div>
+      <VueSlider v-model="value1" tooltip="always" :tooltipFormatter="args.tooltipFormatter" />
+
+      <VueSlider
+        v-model="value2"
+        :data="['a', 'b', 'c', 'd']"
+        :tooltip-formatter="val => val.toUpperCase()"
+      />
+    </div>
   `,
 })
 tooltipFormatter.storyName = 'tooltipFormatter'
