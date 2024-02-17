@@ -4,7 +4,7 @@
     :class="containerClasses"
     :style="containerStyles"
     @click="clickHandle"
-    @touchstart="dragStartOnProcess"
+    @touchstart.passive="dragStartOnProcess"
     @mousedown="dragStartOnProcess"
     v-bind="$attrs"
   >

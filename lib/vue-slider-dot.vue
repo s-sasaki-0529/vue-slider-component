@@ -4,7 +4,7 @@
     :class="dotClasses"
     :aria-valuetext="tooltipValue"
     @mousedown="dragStart"
-    @touchstart="dragStart"
+    @touchstart.passive="dragStart"
   >
     <slot name="dot">
       <div :class="handleClasses" :style="dotStyle" />
