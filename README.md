@@ -30,6 +30,24 @@ $ yarn add vue-3-slider-component
 ## 🚀 Usage
 
 ```vue
+<script setup lang="ts">
+import { ref } from "vue";
+import VueSlider from "vue-3-slider-component";
+
+const value = ref(0);
+</script>
+
+<template>
+  <div>
+    <VueSlider v-model="value" />
+    <p>Value: {{ value }}</p>
+  </div>
+</template>
+```
+
+Also available in the Options API
+
+```vue
 <template>
   <VueSlider v-model="value" />
 </template>
