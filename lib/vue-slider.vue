@@ -841,12 +841,15 @@ export default {
     },
   },
   watch: {
-    modelValue() {
-      if (this.control && !this.states.has(SliderState.Drag) && this.isNotSync) {
-        this.control.setValue(this.modelValue)
-        this.syncValueByPos()
-      }
-    },
-  },
+    modelValue: {
+        handler() {
+            if (this.control && !this.states.has(SliderState.Drag) && this.isNotSync) {
+                this.control.setValue(this.modelValue);
+                this.syncValueByPos();
+            }
+        },
+        deep: true
+    }
+}
 }
 </script>
