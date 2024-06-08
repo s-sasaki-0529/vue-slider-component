@@ -104,10 +104,10 @@
 <script>
 import VueSliderDot from './vue-slider-dot.vue'
 import VueSliderMark from './vue-slider-mark.vue'
-import { getSize, getPos, getKeyboardHandleFunc, HandleFunction } from './utils'
+import { getSize, getPos, getKeyboardHandleFunc } from './utils'
 import Decimal from './utils/decimal'
 import Control, { ERROR_TYPE } from './utils/control'
-import State, { StateMap } from './utils/state'
+import State from './utils/state'
 
 const DEFAULT_SLIDER_SIZE = 4
 
