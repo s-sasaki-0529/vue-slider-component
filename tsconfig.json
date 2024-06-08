@@ -13,9 +13,6 @@
     "sourceMap": true,
     "baseUrl": ".",
     "skipLibCheck": true,
-    "types": [
-      "webpack-env",
-    ],
     "paths": {
       "@/*": [
         "src/*"
