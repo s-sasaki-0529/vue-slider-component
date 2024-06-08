@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve src/main.js",
     "build": "vue-cli-service build --target lib lib/index.js && cp -a lib/typings typings",
-    "prettier": "prettier --write lib/**/*.{ts,tsx,scss}",
+    "prettier": "prettier --write lib/**/*.{ts,tsx,scss,vue}",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
