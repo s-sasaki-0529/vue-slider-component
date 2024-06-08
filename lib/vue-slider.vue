@@ -32,7 +32,7 @@
                 :stepActiveStyle="stepActiveStyle"
                 :labelStyle="labelStyle"
                 :labelActiveStyle="labelActiveStyle"
-                :onPressLabel="pos => clickable && setValueByPos(pos)"
+                :onPressLabel="(pos) => clickable && setValueByPos(pos)"
               >
                 <template #step>
                   <slot name="step" v-bind="{ ...mark }" />
@@ -138,7 +138,7 @@ export default {
     direction: {
       type: String,
       default: 'ltr',
-      validator: dir => ['ltr', 'rtl', 'ttb', 'btt'].indexOf(dir) > -1,
+      validator: (dir) => ['ltr', 'rtl', 'ttb', 'btt'].indexOf(dir) > -1,
     },
     width: {
       type: [Number, String],
@@ -203,14 +203,14 @@ export default {
     tooltip: {
       type: String,
       default: 'active',
-      validator: val => ['none', 'always', 'focus', 'hover', 'active'].indexOf(val) > -1,
+      validator: (val) => ['none', 'always', 'focus', 'hover', 'active'].indexOf(val) > -1,
     },
     tooltipPlacement: {
       type: [String, Array],
       default: undefined,
-      validator: data =>
+      validator: (data) =>
         (Array.isArray(data) ? data : [data]).every(
-          val => ['top', 'right', 'bottom', 'left'].indexOf(val) > -1,
+          (val) => ['top', 'right', 'bottom', 'left'].indexOf(val) > -1,
         ),
     },
     tooltipFormatter: {
@@ -339,19 +339,19 @@ export default {
       const containerWidth = this.width
         ? getSize(this.width)
         : this.isHorizontal
-        ? 'auto'
-        : getSize(DEFAULT_SLIDER_SIZE)
+          ? 'auto'
+          : getSize(DEFAULT_SLIDER_SIZE)
       const containerHeight = this.height
         ? getSize(this.height)
         : this.isHorizontal
-        ? getSize(DEFAULT_SLIDER_SIZE)
-        : 'auto'
+          ? getSize(DEFAULT_SLIDER_SIZE)
+          : 'auto'
       return {
         padding: this.contained
           ? `${dotHeight / 2}px ${dotWidth / 2}px`
           : this.isHorizontal
-          ? `${dotHeight / 2}px 0`
-          : `0 ${dotWidth / 2}px`,
+            ? `${dotHeight / 2}px 0`
+            : `0 ${dotWidth / 2}px`,
         width: containerWidth,
         height: containerHeight,
       }
@@ -454,7 +454,7 @@ export default {
     },
     sliderData() {
       if (this.isObjectArrayData(this.data)) {
-        return this.data.map(obj => obj[this.dataValue])
+        return this.data.map((obj) => obj[this.dataValue])
       } else if (this.isObjectData(this.data)) {
         return Object.keys(this.data)
       } else {
@@ -465,9 +465,9 @@ export default {
       if (this.marks) {
         return this.marks
       } else if (this.isObjectArrayData(this.data)) {
-        return val => {
+        return (val) => {
           const mark = { label: val }
-          this.data.some(obj => {
+          this.data.some((obj) => {
             if (obj[this.dataValue] === val) {
               mark.label = obj[this.dataLabel]
               return true
@@ -484,9 +484,9 @@ export default {
       if (this.tooltipFormatter) {
         return this.tooltipFormatter
       } else if (this.isObjectArrayData(this.data)) {
-        return val => {
+        return (val) => {
           let tooltipText = '' + val
-          this.data.some(obj => {
+          this.data.some((obj) => {
             if (obj[this.dataValue] === val) {
               tooltipText = obj[this.dataLabel]
               return true
@@ -497,7 +497,7 @@ export default {
         }
       } else if (this.isObjectData(this.data)) {
         const data = this.data
-        return val => data[val]
+        return (val) => data[val]
       }
     },
     // Slider value and component internal value are inconsistent
@@ -601,8 +601,8 @@ export default {
         'adsorb',
         'included',
         'dotOptions',
-      ].forEach(name => {
-        this.$watch(name, val => {
+      ].forEach((name) => {
+        this.$watch(name, (val) => {
           if (
             name === 'data' &&
             Array.isArray(this.control.data) &&
@@ -632,7 +632,9 @@ export default {
     },
     syncValueByPos() {
       const values = this.control.dotsValue
-      if (this.isDiff(values, Array.isArray(this.modelValue) ? this.modelValue : [this.modelValue])) {
+      if (
+        this.isDiff(values, Array.isArray(this.modelValue) ? this.modelValue : [this.modelValue])
+      ) {
         const eventValue = values.length === 1 ? values[0] : [...values]
         this.$emit('change', eventValue, this.focusDotIndex)
         this.$emit('update:modelValue', eventValue, this.focusDotIndex)
@@ -769,7 +771,7 @@ export default {
     },
     setIndex(index) {
       const value = Array.isArray(index)
-        ? index.map(n => this.control.getValueByIndex(n))
+        ? index.map((n) => this.control.getValueByIndex(n))
         : this.control.getValueByIndex(index)
       this.setValue(value)
     },
@@ -842,14 +844,14 @@ export default {
   },
   watch: {
     modelValue: {
-        handler() {
-            if (this.control && !this.states.has(SliderState.Drag) && this.isNotSync) {
-                this.control.setValue(this.modelValue);
-                this.syncValueByPos();
-            }
-        },
-        deep: true
-    }
-}
+      handler() {
+        if (this.control && !this.states.has(SliderState.Drag) && this.isNotSync) {
+          this.control.setValue(this.modelValue)
+          this.syncValueByPos()
+        }
+      },
+      deep: true,
+    },
+  },
 }
 </script>

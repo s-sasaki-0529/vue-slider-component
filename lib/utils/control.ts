@@ -128,7 +128,7 @@ export default class Control {
     const list = this.order ? [...dotsPos].sort((a, b) => a - b) : dotsPos
     this.dotsPos = list
     this.setDotsValue(
-      list.map(dotPos => this.getValueByPos(dotPos)),
+      list.map((dotPos) => this.getValueByPos(dotPos)),
       this.adsorb,
     )
   }
@@ -139,7 +139,7 @@ export default class Control {
     // When included is true, the return value is the value of the nearest mark
     if (this.included) {
       let dir = 100
-      this.markList.forEach(mark => {
+      this.markList.forEach((mark) => {
         const curDir = Math.abs(mark.pos - pos)
         if (curDir < dir) {
           dir = curDir
@@ -152,7 +152,7 @@ export default class Control {
 
   // Sync slider position
   syncDotsPos() {
-    this.dotsPos = this.dotsValue.map(v => this.parseValue(v))
+    this.dotsPos = this.dotsValue.map((v) => this.parseValue(v))
   }
 
   /**
@@ -179,19 +179,19 @@ export default class Control {
     }
 
     if (this.marks === true) {
-      return this.getValues().map(value => getMarkByValue(value))
+      return this.getValues().map((value) => getMarkByValue(value))
     } else if (Object.prototype.toString.call(this.marks) === '[object Object]') {
       return Object.keys(this.marks)
         .sort((a, b) => +a - +b)
-        .map(value => {
+        .map((value) => {
           const item = (this.marks as Marks)[value]
           return getMarkByValue(value, typeof item !== 'string' ? item : { label: item })
         })
     } else if (Array.isArray(this.marks)) {
-      return this.marks.map(value => getMarkByValue(value))
+      return this.marks.map((value) => getMarkByValue(value))
     } else if (typeof this.marks === 'function') {
       return this.getValues()
-        .map(value => ({ value, result: (this.marks as MarksFunction)(value) }))
+        .map((value) => ({ value, result: (this.marks as MarksFunction)(value) }))
         .filter(({ result }) => !!result)
         .map(({ value, result }) => getMarkByValue(value, result as Mark))
     } else {
@@ -209,7 +209,7 @@ export default class Control {
   getRecentDot(pos: number): number {
     const arr = this.dotsPos
       .filter((dotPos, index) => !(this.getDotOption(index) && this.getDotOption(index)!.disabled))
-      .map(dotPos => Math.abs(dotPos - pos))
+      .map((dotPos) => Math.abs(dotPos - pos))
     return arr.indexOf(Math.min(...arr))
   }
 
@@ -224,10 +224,7 @@ export default class Control {
     if (this.data) {
       return this.data.indexOf(value)
     }
-    return new Decimal(+value)
-      .minus(this.min)
-      .divide(this.interval)
-      .toNumber()
+    return new Decimal(+value).minus(this.min).divide(this.interval).toNumber()
   }
 
   /**
@@ -245,10 +242,7 @@ export default class Control {
     }
     return this.data
       ? this.data[index]
-      : new Decimal(index)
-          .multiply(this.interval)
-          .plus(this.min)
-          .toNumber()
+      : new Decimal(index).multiply(this.interval).plus(this.min).toNumber()
   }
 
   /**
@@ -295,7 +289,7 @@ export default class Control {
         }
       }
     })
-    return this.dotsPos.map(_ => changePos)
+    return this.dotsPos.map((_) => changePos)
   }
 
   /**
@@ -349,7 +343,7 @@ export default class Control {
     })
 
     return this.dotsPos.map((_, i) => {
-      const changeDot = changeDots.filter(dot => dot.index === i)
+      const changeDot = changeDots.filter((dot) => dot.index === i)
       return changeDot.length ? changeDot[0].changePos : 0
     })
   }
@@ -404,10 +398,7 @@ export default class Control {
         this.emitError(ERROR_TYPE.VALUE)
         return 0
       }
-      val = new Decimal(val)
-        .minus(this.min)
-        .divide(this.interval)
-        .toNumber()
+      val = new Decimal(val).minus(this.min).divide(this.interval).toNumber()
     }
 
     const pos = new Decimal(val).multiply(this.gap).toNumber()
@@ -449,12 +440,7 @@ export default class Control {
     } else {
       const values: Value[] = []
       for (let i = 0; i <= this.total; i++) {
-        values.push(
-          new Decimal(i)
-            .multiply(this.interval)
-            .plus(this.min)
-            .toNumber(),
-        )
+        values.push(new Decimal(i).multiply(this.interval).plus(this.min).toNumber())
       }
       return values
     }
@@ -508,10 +494,7 @@ export default class Control {
     if (this.data) {
       total = this.data.length - 1
     } else {
-      total = new Decimal(this.max)
-        .minus(this.min)
-        .divide(this.interval)
-        .toNumber()
+      total = new Decimal(this.max).minus(this.min).divide(this.interval).toNumber()
     }
     if (total - Math.floor(total) !== 0) {
       this.emitError(ERROR_TYPE.INTERVAL)
@@ -583,6 +566,6 @@ export default class Control {
   }
 
   get dotsIndex(): number[] {
-    return this.dotsValue.map(val => this.getIndexByValue(val))
+    return this.dotsValue.map((val) => this.getIndexByValue(val))
   }
 }

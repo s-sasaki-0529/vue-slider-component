@@ -72,13 +72,13 @@ export const getKeyboardHandleFunc = (
   }
   switch (e.keyCode) {
     case KEY_CODE.UP:
-      return i => (params.direction === 'ttb' ? i - 1 : i + 1)
+      return (i) => (params.direction === 'ttb' ? i - 1 : i + 1)
     case KEY_CODE.RIGHT:
-      return i => (params.direction === 'rtl' ? i - 1 : i + 1)
+      return (i) => (params.direction === 'rtl' ? i - 1 : i + 1)
     case KEY_CODE.DOWN:
-      return i => (params.direction === 'ttb' ? i + 1 : i - 1)
+      return (i) => (params.direction === 'ttb' ? i + 1 : i - 1)
     case KEY_CODE.LEFT:
-      return i => (params.direction === 'rtl' ? i + 1 : i - 1)
+      return (i) => (params.direction === 'rtl' ? i + 1 : i - 1)
 
     case KEY_CODE.END:
       return () => params.max
@@ -86,9 +86,9 @@ export const getKeyboardHandleFunc = (
       return () => params.min
 
     case KEY_CODE.PAGE_UP:
-      return i => i + 10
+      return (i) => i + 10
     case KEY_CODE.PAGE_DOWN:
-      return i => i - 10
+      return (i) => i - 10
 
     default:
       return null
