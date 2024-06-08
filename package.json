@@ -24,6 +24,7 @@
     "@storybook/vue3-webpack5": "^8.1.6",
     "@vitejs/plugin-vue": "^5.0.5",
     "prettier": "^3.3.1",
+    "sass": "^1.77.4",
     "storybook": "^8.1.6",
     "typescript": "^5.4.5",
     "vite": "^5.2.13",
