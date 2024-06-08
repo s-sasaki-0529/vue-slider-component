@@ -5,14 +5,23 @@
   "author": "shingo.sasaki <shingo.sasaki.0529@gmail.com> (https://www.shingo-sasaki.net/)",
   "scripts": {
     "dev": "vite",
+    "build": "vite build",
     "prettier": "prettier --write lib/**/*.{ts,scss,vue}",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "main": "./dist/vue-3-slider-component.umd.min.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-3-slider-component.mjs",
+      "require": "./dist/vue-3-slider-component.umd.js",
+      "types": "./lib/typings/index.d.ts"
+    }
+  },
+  "types": "./lib/typings/index.d.ts",
   "files": [
     "dist",
     "lib",
+    "src",
     "typings"
   ],
   "devDependencies": {
@@ -45,6 +54,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/s-sasaki-0529/vue-slider-component.git"
-  },
-  "typings": "./typings/index.d.ts"
+  }
 }
