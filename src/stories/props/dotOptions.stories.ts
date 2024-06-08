@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/vue3'
+import { StoryFn, Meta } from '@storybook/vue3'
 import { ref } from 'vue'
 import VueSlider from '../../../lib'
 
@@ -36,7 +36,7 @@ Slider settings, multiple sliders can be distinguished by array type.
   },
 } as Meta
 
-export const dotOptions: Story = args => ({
+export const dotOptions: StoryFn = args => ({
   components: { VueSlider },
   setup() {
     const value = ref([20, 50, 70])

@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/vue3'
+import { StoryFn, Meta } from '@storybook/vue3'
 import { ref } from 'vue'
 import VueSlider from '../../../lib'
 
@@ -25,7 +25,7 @@ The placement of the Tooltip.
   },
 } as Meta
 
-export const tooltipPlacement: Story = args => ({
+export const tooltipPlacement: StoryFn = args => ({
   components: { VueSlider },
   setup() {
     const value = ref(50)

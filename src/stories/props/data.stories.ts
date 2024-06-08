@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/vue3'
+import { StoryFn, Meta } from '@storybook/vue3'
 import { ref } from 'vue'
 import VueSlider from '../../../lib'
 
@@ -31,7 +31,7 @@ The object type is actually a simplified writing of \`data & marks & tooltipForm
   },
 } as Meta
 
-export const data: Story = args => ({
+export const data: StoryFn = args => ({
   components: { VueSlider },
   setup() {
     const value1 = ref('D')

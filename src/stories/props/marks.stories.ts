@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/vue3'
+import { StoryFn, Meta } from '@storybook/vue3'
 import { ref } from 'vue'
 import VueSlider from '../../../lib'
 
@@ -35,7 +35,7 @@ Used to control the Mark of the display.
   },
 } as Meta
 
-export const marks: Story = args => ({
+export const marks: StoryFn = args => ({
   components: { VueSlider },
   setup() {
     const value = ref(2)

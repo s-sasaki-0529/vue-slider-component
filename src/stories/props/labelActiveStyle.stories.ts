@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/vue3'
+import { StoryFn, Meta } from '@storybook/vue3'
 import { ref } from 'vue'
 import VueSlider from '../../../lib'
 
@@ -21,7 +21,7 @@ The style of the label activation state.
   },
 } as Meta
 
-export const labelActiveStyle: Story = args => ({
+export const labelActiveStyle: StoryFn = args => ({
   components: { VueSlider },
   setup() {
     const value = ref(50)

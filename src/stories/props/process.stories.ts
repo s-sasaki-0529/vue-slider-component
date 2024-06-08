@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/vue3'
+import { StoryFn, Meta } from '@storybook/vue3'
 import { ref } from 'vue'
 import VueSlider from '../../../lib'
 
@@ -27,7 +27,7 @@ Control the display of the process and support multiple process.
   },
 } as Meta
 
-export const process: Story = args => ({
+export const process: StoryFn = args => ({
   components: { VueSlider },
   setup() {
     const value = ref([20, 40, 60])

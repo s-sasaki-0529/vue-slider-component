@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/vue3'
+import { StoryFn, Meta } from '@storybook/vue3'
 import { ref } from 'vue'
 import VueSlider from '../../../lib'
 
@@ -31,7 +31,7 @@ If \`true\` is returned, the [default action](https://github.com/NightCatSama/vu
   },
 } as Meta
 
-export const keydownHook: Story = args => ({
+export const keydownHook: StoryFn = args => ({
   components: { VueSlider },
   setup() {
     const value = ref(50)

@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/vue3'
+import { StoryFn, Meta } from '@storybook/vue3'
 import { ref } from 'vue'
 import VueSlider from '../../../lib'
 
@@ -27,7 +27,7 @@ If the slider is using CSS3 scale transform to scale or is in a scaled container
   },
 } as Meta
 
-export const zoom: Story = args => ({
+export const zoom: StoryFn = args => ({
   components: { VueSlider },
   setup() {
     const value = ref(50)

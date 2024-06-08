@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/vue3'
+import { StoryFn, Meta } from '@storybook/vue3'
 import { ref } from 'vue'
 import VueSlider from '../../../lib'
 
@@ -31,7 +31,7 @@ When the \`value\` is an array type, it corresponds to multiple sliders.
   },
 } as Meta
 
-export const value: Story = args => ({
+export const value: StoryFn = args => ({
   components: { VueSlider },
   setup() {
     const value1 = ref(50)

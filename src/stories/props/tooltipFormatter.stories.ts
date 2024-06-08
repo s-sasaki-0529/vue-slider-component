@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/vue3'
+import { StoryFn, Meta } from '@storybook/vue3'
 import { ref } from 'vue'
 import VueSlider from '../../../lib'
 
@@ -37,7 +37,7 @@ Format the value of the Tooltip. When the type is \`string\`, \`{value}\` will b
   },
 } as Meta
 
-export const tooltipFormatter: Story = args => ({
+export const tooltipFormatter: StoryFn = args => ({
   components: { VueSlider },
   setup() {
     const value1 = ref(50)

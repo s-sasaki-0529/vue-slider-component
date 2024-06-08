@@ -1,4 +1,4 @@
-import { Story, Meta } from '@storybook/vue3'
+import { StoryFn, Meta } from '@storybook/vue3'
 import { ref } from 'vue'
 import VueSlider from '../../../lib'
 
@@ -26,7 +26,7 @@ export default {
   },
 } as Meta
 
-export const Dragging: Story = args => ({
+export const Dragging: StoryFn = args => ({
   components: { VueSlider },
   setup() {
     const value = ref([20, 50, 80])
