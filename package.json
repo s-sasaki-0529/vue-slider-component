@@ -10,6 +10,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
+  "packageManager": "pnpm@9.2.0",
   "exports": {
     ".": {
       "import": "./dist/vue-3-slider-component.mjs",
@@ -28,6 +29,7 @@
     "@storybook/addon-actions": "^8.1.6",
     "@storybook/addon-essentials": "^8.1.6",
     "@storybook/addon-links": "^8.1.6",
+    "@storybook/vue3": "^8.1.6",
     "@storybook/vue3-vite": "^8.1.6",
     "@vitejs/plugin-vue": "^5.0.5",
     "prettier": "^3.3.1",

@@ -2,7 +2,7 @@
 
 set -e
 
-yarn build
+pnpm build
 # npm version patch
 # git push origin [tag]
 npm publish
