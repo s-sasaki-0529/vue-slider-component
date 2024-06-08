@@ -1,4 +1,5 @@
 export const parameters = {
+  docsOnly: true,
   previewTabs: {
     canvas: {
       hidden: true,
@@ -17,3 +18,4 @@ export const decorators = [
     }
   },
 ]
+export const tags = ['autodocs'];

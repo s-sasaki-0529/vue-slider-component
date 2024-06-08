@@ -1,15 +1,9 @@
 const path = require('path')
 
 module.exports = {
-  core: {
-    builder: 'webpack5',
-  },
-  stories: [
-    '../src/stories/vue-3-slider-component.stories.ts',
-    '../src/stories/sandbox.stories.ts',
-    '../src/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-  ],
-  addons: ['@storybook/addon-essentials'],
+  stories: ['../src/stories/**/*.stories.ts'],
+  addons: ['@storybook/addon-essentials', '@storybook/addon-webpack5-compiler-babel'],
+
   webpackFinal(config) {
     const cssRuleIndex = config.module.rules.findIndex(
       rule => rule.test.toString() === /\.css$/.toString(),
@@ -19,5 +13,9 @@ module.exports = {
       use: ['style-loader', 'css-loader', 'sass-loader'],
     }
     return config
+  },
+  framework: {
+    name: '@storybook/vue3-webpack5',
+    options: {}
   },
 }

@@ -5,6 +5,7 @@ import VueSlider from '../../../lib'
 export default {
   title: 'slots/dot',
   parameters: {
+    docsOnly: true,
     docs: {
       description: {
         component: `
