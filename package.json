@@ -4,8 +4,6 @@
   "description": "A highly customized slider component for Vue 3",
   "author": "shingo.sasaki <shingo.sasaki.0529@gmail.com> (https://www.shingo-sasaki.net/)",
   "scripts": {
-    "serve": "vue-cli-service serve src/main.js",
-    "build": "vue-cli-service build --target lib lib/index.js && cp -a lib/typings typings",
     "prettier": "prettier --write lib/**/*.{ts,scss,vue}",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -27,10 +25,6 @@
     "@storybook/addon-webpack5-compiler-babel": "^3.0.3",
     "@storybook/vue3": "^8.1.6",
     "@storybook/vue3-webpack5": "^8.1.6",
-    "@vue/cli": "^5.0.8",
-    "@vue/cli-plugin-babel": "~5.0.8",
-    "@vue/cli-plugin-typescript": "~5.0.8",
-    "@vue/cli-service": "~5.0.8",
     "babel-loader": "^8.2.5",
     "css-loader": "^7.1.2",
     "prettier": "^3.3.1",
