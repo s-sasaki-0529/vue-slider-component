@@ -14,11 +14,7 @@
     "lib",
     "typings"
   ],
-  "dependencies": {
-    "core-js": "^3.6.5"
-  },
   "devDependencies": {
-    "@babel/core": "^7.18.5",
     "@storybook/addon-actions": "^8.1.6",
     "@storybook/addon-essentials": "^8.1.6",
     "@storybook/addon-links": "^8.1.6",
