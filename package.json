@@ -32,7 +32,6 @@
     "@vue/cli-plugin-typescript": "~5.0.8",
     "@vue/cli-service": "~5.0.8",
     "babel-loader": "^8.2.5",
-    "lint-staged": "^8.1.0",
     "prettier": "^1.15.2",
     "sass": "1.26.7",
     "sass-loader": "^8.0.2",
@@ -43,9 +42,6 @@
   "bugs": {
     "url": "https://github.com/s-sasaki-0529/vue-slider-component/issues"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
   "homepage": "https://vue-3-slider-component.netlify.app/?path=/docs/vue-3-slider-component--vue-3-slider-component",
   "keywords": [
     "vue",
@@ -55,12 +51,6 @@
     "vue-slider-component"
   ],
   "license": "MIT",
-  "lint-staged": {
-    "*.{js,ts,tsx,scss}": [
-      "npm run prettier",
-      "git add"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/s-sasaki-0529/vue-slider-component.git"
