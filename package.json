@@ -25,16 +25,10 @@
     "@storybook/addon-webpack5-compiler-babel": "^3.0.3",
     "@storybook/vue3": "^8.1.6",
     "@storybook/vue3-webpack5": "^8.1.6",
-    "babel-loader": "^8.2.5",
-    "css-loader": "^7.1.2",
     "prettier": "^3.3.1",
-    "sass": "1.26.7",
-    "sass-loader": "^14.2.1",
     "storybook": "^8.1.6",
-    "style-loader": "^4.0.0",
     "typescript": "^5.4.5",
-    "vue": "^3.2.0",
-    "vue-loader": "^16.8.3"
+    "vue": "^3.2.0"
   },
   "bugs": {
     "url": "https://github.com/s-sasaki-0529/vue-slider-component/issues"
