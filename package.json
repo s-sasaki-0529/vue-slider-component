@@ -40,6 +40,9 @@
     "vite-plugin-css-injected-by-js": "^3.5.1",
     "vue": "^3.2.0"
   },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
   "bugs": {
     "url": "https://github.com/s-sasaki-0529/vue-slider-component/issues"
   },
