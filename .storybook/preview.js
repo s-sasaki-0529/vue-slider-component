@@ -1,13 +1,3 @@
-export const parameters = {
-  docsOnly: true,
-  previewTabs: {
-    canvas: {
-      hidden: true,
-    },
-  },
-  viewMode: 'docs',
-}
-
 export const decorators = [
   // Paddings to allow tooltips to fit in the viewport.
   story => {
@@ -18,4 +8,3 @@ export const decorators = [
     }
   },
 ]
-export const tags = ['autodocs'];
