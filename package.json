@@ -37,8 +37,7 @@
     "storybook": "^8.1.6",
     "typescript": "^5.4.5",
     "vite": "^5.2.13",
-    "vite-plugin-css-injected-by-js": "^3.5.1",
-    "vue": "^3.4.27"
+    "vite-plugin-css-injected-by-js": "^3.5.1"
   },
   "peerDependencies": {
     "vue": "^3.0.0"

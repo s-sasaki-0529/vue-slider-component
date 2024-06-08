@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      vue:
+        specifier: ^3.0.0
+        version: 3.4.27(typescript@5.4.5)
     devDependencies:
       '@storybook/addon-actions':
         specifier: ^8.1.6
@@ -44,9 +48,6 @@ importers:
       vite-plugin-css-injected-by-js:
         specifier: ^3.5.1
         version: 3.5.1(vite@5.2.13(@types/node@18.19.34)(sass@1.77.4))
-      vue:
-        specifier: ^3.4.27
-        version: 3.4.27(typescript@5.4.5)
 
 packages:
 
