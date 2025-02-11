@@ -84,8 +84,8 @@
           :aria-valuemax="this.max"
           :aria-orientation="this.isHorizontal ? 'horizontal' : 'vertical'"
           tabindex="0"
-          :nativeOnFocus="() => !dot.disabled && focus(index)"
-          :nativeOnBlur="() => blur()"
+          @focus="() => !dot.disabled && focus(index)"
+          @blur="() => blur()"
           v-bind="{ ...dotAttrs }"
         >
           <template #dot>
